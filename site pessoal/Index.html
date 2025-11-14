@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinturas & Arte</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --rosa-claro: #ffb6d9;
+            --rosa-medio: #ff7ebc;
+            --rosa-escuro: #cc2f7f;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        .navbar {
+            background: var(--rosa-escuro) !important;
+        }
+
+        .brand-text {
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 5px var(--rosa-claro);
+        }
+
+        .section-title {
+            border-left: 5px solid var(--rosa-medio);
+            padding-left: 12px;
+            color: var(--rosa-medio);
+            font-weight: bold;
+        }
+
+        .card-info {
+            border: 2px solid var(--rosa-medio);
+            transition: 0.3s;
+        }
+
+        .card-info:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 15px var(--rosa-claro);
+        }
+
+        #btnTopo {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            font-size: 22px;
+            display: none;
+        }
+
+        .footer {
+            background-color: var(--rosa-escuro);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ===========================================================
+    NAVBAR
+=========================================================== -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand brand-text" href="#">🎨 Pinturas & Arte</a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="menu" class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#carrossel">Galeria</a></li>
+                <li class="nav-item"><a class="nav-link" href="#cards">Quadros</a></li>
+                <li class="nav-item"><a class="nav-link" href="#quem-somos">Quem Somos</a></li>
+            </ul>
+
+            <!-- Tema -->
+            <div class="dropdown ms-3">
+                <button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">Tema</button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><button class="dropdown-item" onclick="setTheme('light')">Light</button></li>
+                    <li><button class="dropdown-item" onclick="setTheme('dark')">Dark</button></li>
+                    <li><button class="dropdown-item" onclick="setTheme('auto')">Auto</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- ===========================================================
+    HERO
+=========================================================== -->
+<header class="py-5 mt-5 text-center">
+    <h1 class="display-4 text-light fw-bold">Bem-vindo ao Mundo das Pinturas</h1>
+    <p class="lead" style="color: var(--rosa-claro);">Arte que inspira, transforma e emociona.</p>
+</header>
+
+<!-- ===========================================================
+    CARROSSEL
+=========================================================== -->
+<section id="carrossel" class="container py-5">
+    <h2 class="section-title mb-4">Galeria de Pinturas</h2>
+
+    <div id="carouselArte" class="carousel slide shadow-lg" data-bs-ride="carousel">
+        <div class="carousel-inner rounded">
+
+            <div class="carousel-item active">
+                <img src="imagens/imagem3.jpg" class="d-block w-100">
+            </div>
+
+            <div class="carousel-item">
+                <img src="imagens/imagem6.jpg" class="d-block w-100">
+            </div>
+
+            <div class="carousel-item">
+                <img src="imagens/imagem4.jpg" class="d-block w-100">
+            </div>
+
+            <div class="carousel-item">
+                <img src="imagens/imagem5.jpg" class="d-block w-100">
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselArte" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselArte" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+</section>
+
+<!-- ===========================================================
+    CARDS INFORMATIVOS
+=========================================================== -->
+<section id="cards" class="container py-5">
+    <h2 class="section-title mb-4">Obras em Destaque</h2>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card card-info">
+                <img src="imagens/imagem1.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="text-center" style="color: var(--rosa-medio);">Pintura Abstrata</h5>
+                    <p>Obra moderna com cores vivas e formas fluidas.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card card-info">
+                <img src="imagens/imagem3.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="text-center" style="color: var(--rosa-medio);">Paisagem Natural</h5>
+                    <p>Quadro inspirado na tranquilidade da natureza.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card card-info">
+                <img src="imagens/realista.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="text-center" style="color: var(--rosa-medio);">Retrato Artístico</h5>
+                    <p>Pintura realista feita com técnicas avançadas.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card card-info">
+                <img src="imagens/minimalista.jpeg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="text-center" style="color: var(--rosa-medio);">Arte Minimalista</h5>
+                    <p>Simples, elegante e moderna.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card card-info">
+                <img src="imagens/floral.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="text-center" style="color: var(--rosa-medio);">Floral</h5>
+                    <p>Pintura delicada com inspiração em flores.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===========================================================
+    QUEM SOMOS
+=========================================================== -->
+<section id="quem-somos" class="container py-5">
+    <h2 class="section-title mb-4">Quem Somos</h2>
+
+    <p class="fs-5">
+        Somos apaixonados por arte e acreditamos no poder transformador da pintura.
+        Nosso objetivo é conectar artistas, colecionadores e admiradores,
+        oferecendo um espaço dedicado à beleza e à expressão artística.
+    </p>
+</section>
+
+<!-- BOTÃO TOPO -->
+<button id="btnTopo" onclick="voltarTopo()" class="btn btn-primary rounded-circle">↑</button>
+
+<!-- RODAPÉ -->
+<footer class="footer text-center p-3 mt-5">
+    <p class="mb-0">© 2025 Pinturas & Arte — Todos os direitos reservados</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Tema
+    function setTheme(theme) {
+        document.documentElement.setAttribute("data-bs-theme", theme);
+        localStorage.setItem("tema", theme);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const t = localStorage.getItem("tema") || "dark";
+        setTheme(t);
+    });
+
+    // Voltar ao topo
+    window.onscroll = function() {
+        const btn = document.getElementById("btnTopo");
+        btn.style.display = window.scrollY > 250 ? "block" : "none";
+    }
+
+    function voltarTopo() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+</script>
+<!-- ===============================
+     RODAPÉ
+=============================== -->
+<footer class="footer bg-dark text-light pt-4 pb-2">
+    <div class="container text-center">
+
+        <!-- Contato -->
+        <p class="mb-2">
+            <strong>Telefone:</strong> 
+            <a href="tel:+5511999999999" class="text-decoration-none text-light">+55 (11) 99999-9999</a>
+        </p>
+
+        <!-- Redes Sociais -->
+        <div class="mb-2">
+            <a href="https://www.facebook.com" target="_blank" class="text-light mx-2">
+                <i class="bi bi-facebook fs-5"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="text-light mx-2">
+                <i class="bi bi-instagram fs-5"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" class="text-light mx-2">
+                <i class="bi bi-twitter fs-5"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="text-light mx-2">
+                <i class="bi bi-linkedin fs-5"></i>
+            </a>
+        </div>
+
+        <!-- Direitos -->
+        <p class="mb-0">&copy; 2025 Pinturas & Arte. Todos os direitos reservados.</p>
+
+    </div>
+</footer>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+</body>
+</html>
